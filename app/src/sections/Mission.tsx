@@ -1,7 +1,6 @@
 import { useRef, useEffect } from 'react'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
-import SectionLabel from '../components/SectionLabel'
 
 gsap.registerPlugin(ScrollTrigger)
 
@@ -57,26 +56,29 @@ export default function Mission() {
     <section
       ref={sectionRef}
       className="bg-[#0D0D0D] section-padding relative overflow-hidden"
-      style={{ paddingTop: '160px', paddingBottom: '160px' }}
+      style={{ paddingTop: '100px', paddingBottom: '100px' }}
     >
       {/* Background glow */}
       <div className="absolute top-1/2 right-0 w-[500px] h-[500px] bg-[#CCFF00]/4 blur-[100px] rounded-full pointer-events-none" />
 
-      <div className="max-w-[900px] mx-auto relative z-10">
-        <SectionLabel text="About the agency" light />
+      <div className="max-w-[1200px] mx-auto relative z-10">
+        <p className="text-caption text-[#808080] mb-4 md:mb-6">
+          <span className="text-[#CCFF00] font-bold">PRERA</span> — FROM VISION TO VENUE
+        </p>
 
-        <div ref={textRef} className="text-display-xl text-white font-serif italic tracking-wide leading-tight">
-          <span className="inline">The only agency </span>
-          <span ref={imagesRef} className="inline">
+        <div ref={textRef} className="flex flex-col md:flex-row md:items-center gap-6 md:gap-10 lg:gap-16">
+          <div className="md:w-[55%] text-left">
+            <p className="text-[clamp(22px,3vw,42px)] md:text-display-m text-white font-serif italic tracking-tight leading-[1.15]">
+              The only agency <span className="bg-[#CCFF00] text-[#0D0D0D] px-2 md:px-3 py-0.5 rounded font-sans not-italic font-bold">built</span> for brands who refuse to let their events stay in the dark.
+            </p>
+          </div>
+          <div ref={imagesRef} className="md:w-[35%]">
             <img
               src="/images/mission-1.jpg"
               alt="Event planning"
-              className="inline-img inline-block w-20 h-12 rounded-lg object-cover align-middle mx-1 shadow-sm opacity-0"
+              className="inline-img w-full h-auto min-h-[120px] md:min-h-[180px] rounded-2xl object-cover shadow-2xl opacity-0"
             />
-          </span>
-          <span className="inline"> </span>
-          <span className="inline bg-[#CCFF00] text-[#0D0D0D] px-3 py-0.5 rounded font-sans not-italic font-bold">built</span>
-          <span className="inline"> for brands who refuse to let their events stay in the dark.</span>
+          </div>
         </div>
       </div>
     </section>
